@@ -1,0 +1,42 @@
+.keyb{
+    background-color: coral;
+    width: 500px;
+}
+.key-number{
+    width:100px;
+    height: 100px;
+    border-radius: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+.key-do{
+    width:100px;
+    height: 100px;
+    border-radius: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: bisque;
+}
+.key-del{
+    width:100px;
+    height: 100px;
+    border-radius: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: pink
+}
+.results {
+    font-size: 50px;
+    font-weight: bold;
+    background-color: aquamarine;
+    width:500px
+
+}
+.button-clear{
+    width:150px;
+    height: 100px;
+    border-radius: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}

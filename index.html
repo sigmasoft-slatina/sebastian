@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/sebastian.css" />
+</head>
+<body>
+    <p style="font-size: xx-large;"><img src="images/sebastian.png" style="height:180px;"> Sebastian multiplication exercises ! </p>
+    <div id="1" class="multiply">
+    </div>
+    <table class="keyb">
+        <tr>
+            <td>
+                <table id="keypad" cellpadding="5" cellspacing="3">
+                    <tr>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="7">7</button></td>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="8">8</button></td>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="9">9</button></td>
+                        <td ><button class="key-del" onclick="clickButton(this.dataset.id)" data-id="10">DEL</button></td>
+                    </tr>
+                    <tr>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="4">4</button></td>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="5">5</button></td>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="6">6</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="1">1</button></td>
+                        <td><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="2">2</button></td>
+                        <td><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="3">3</button></td> 
+                        <td ><button class="key-do" onclick="clickButton(this.dataset.id)" data-id="11">DO</button></td>
+                    </tr>
+                    <tr>
+                        <td ><button class="key-number" onclick="clickButton(this.dataset.id)" data-id="0">0</button></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="2" class="results">
+            </td>
+        </tr>
+    </table>
+    <script src="scripts/multiply.js" ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+     <script type="text/javascript">
+      (function(){
+         emailjs.init({
+           publicKey: "7SyFyT2-06-uqu5T6",
+         });
+      })();
+      
+      var templateParams = {  
+        name: 'James',
+        notes: 'Check this out!',
+        to_name: 'Grandpa',
+        from_name: 'sebastian',
+        message: 'invat bine',
+        date:Date.now
+      };
+    function SendEmail(result){
+      const data=new Date();
+      console.log(data.toTimeString());
+      var element=document.getElementById('nir');
+      templateParams.message=data.toTimeString()+element.innerText || elemrnt.textContent;
+      emailjs.send('service_ih7xhjg','template_y4v6xv3',templateParams)
+      .then((response) => {
+        console.log('succes',response.status,response.text);
+        })
+      .catch((error) =>{
+        console.log(error);
+      });
+    }
+   </script>
+   
+</body> 
+</html>
